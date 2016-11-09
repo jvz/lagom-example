@@ -3,15 +3,14 @@
  */
 package com.spr.stream.api;
 
-import static com.lightbend.lagom.javadsl.api.Service.named;
-import static com.lightbend.lagom.javadsl.api.Service.namedCall;
+import com.lightbend.lagom.javadsl.api.Descriptor;
+import com.lightbend.lagom.javadsl.api.Service;
+import com.lightbend.lagom.javadsl.api.ServiceCall;
 
 import akka.NotUsed;
 import akka.stream.javadsl.Source;
 
-import com.lightbend.lagom.javadsl.api.Descriptor;
-import com.lightbend.lagom.javadsl.api.Service;
-import com.lightbend.lagom.javadsl.api.ServiceCall;
+import static com.lightbend.lagom.javadsl.api.Service.*;
 
 /**
  * The stream interface.

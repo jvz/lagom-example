@@ -3,15 +3,14 @@
  */
 package com.spr.hello.api;
 
-import static com.lightbend.lagom.javadsl.api.Service.named;
-import static com.lightbend.lagom.javadsl.api.Service.pathCall;
+import com.lightbend.lagom.javadsl.api.Descriptor;
+import com.lightbend.lagom.javadsl.api.Service;
+import com.lightbend.lagom.javadsl.api.ServiceCall;
 
 import akka.Done;
 import akka.NotUsed;
 
-import com.lightbend.lagom.javadsl.api.Descriptor;
-import com.lightbend.lagom.javadsl.api.Service;
-import com.lightbend.lagom.javadsl.api.ServiceCall;
+import static com.lightbend.lagom.javadsl.api.Service.*;
 
 /**
  * The Hello service interface.
