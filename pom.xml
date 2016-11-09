@@ -13,6 +13,8 @@
         <module>stream-impl</module>
         <module>integration-tests</module>
         <module>cassandra-config</module>
+        <module>blog-api</module>
+        <module>blog-impl</module>
     </modules>
 
     <build>
@@ -83,6 +85,13 @@
                 <groupId>com.typesafe.conductr</groupId>
                 <artifactId>${conductr.lib.name}</artifactId>
                 <version>1.4.7</version>
+            </dependency>
+            <!-- TODO: Immutables would be a better library to use than Lombok with Lagom -->
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>1.16.10</version>
+                <scope>provided</scope>
             </dependency>
         </dependencies>
     </dependencyManagement>
