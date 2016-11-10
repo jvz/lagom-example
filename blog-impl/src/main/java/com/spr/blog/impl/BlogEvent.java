@@ -12,8 +12,8 @@ import com.spr.blog.api.PostContent;
 import javax.annotation.concurrent.Immutable;
 
 import lombok.AllArgsConstructor;
-import lombok.Data;
 import lombok.NonNull;
+import lombok.Value;
 
 /**
  * Events related to blog post entities.
@@ -30,23 +30,23 @@ public interface BlogEvent extends Jsonable, AggregateEvent<BlogEvent> {
 
     @Immutable
     @JsonDeserialize
-    @Data
+    @Value
     @AllArgsConstructor(onConstructor = @__(@JsonCreator))
     final class PostAdded implements BlogEvent, CompressedJsonable {
         @NonNull
-        private final String id;
+        String id;
         @NonNull
-        private final PostContent content;
+        PostContent content;
     }
 
     @Immutable
     @JsonDeserialize
-    @Data
+    @Value
     @AllArgsConstructor(onConstructor = @__(@JsonCreator))
     final class PostUpdated implements BlogEvent, CompressedJsonable {
         @NonNull
-        private final String id;
+        String id;
         @NonNull
-        private final PostContent content;
+        PostContent content;
     }
 }

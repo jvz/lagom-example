@@ -7,8 +7,8 @@ import javax.annotation.concurrent.Immutable;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.Data;
 import lombok.NonNull;
+import lombok.Value;
 import lombok.experimental.Wither;
 
 /**
@@ -18,17 +18,17 @@ import lombok.experimental.Wither;
  */
 @Immutable
 @JsonDeserialize
-@Data
+@Value
 @Builder
 @Wither
 @AllArgsConstructor(onConstructor = @__(@JsonCreator))
 public final class PostContent {
 
     @NonNull
-    private final String title;
+    String title;
     @NonNull
-    private final String body;
+    String body;
     @NonNull
-    private final String author;
+    String author;
 
 }

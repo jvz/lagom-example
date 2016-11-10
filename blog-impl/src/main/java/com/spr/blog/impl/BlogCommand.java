@@ -14,8 +14,8 @@ import javax.annotation.concurrent.Immutable;
 
 import akka.Done;
 import lombok.AllArgsConstructor;
-import lombok.Data;
 import lombok.NonNull;
+import lombok.Value;
 
 /**
  * Commands for manipulating blog post entities.
@@ -37,11 +37,11 @@ public interface BlogCommand extends Jsonable {
      */
     @Immutable
     @JsonDeserialize
-    @Data
+    @Value
     @AllArgsConstructor
     final class AddPost implements BlogCommand, CompressedJsonable, PersistentEntity.ReplyType<String> {
         @NonNull
-        private final PostContent content;
+        PostContent content;
     }
 
     /**
@@ -49,10 +49,10 @@ public interface BlogCommand extends Jsonable {
      */
     @Immutable
     @JsonDeserialize
-    @Data
+    @Value
     @AllArgsConstructor(onConstructor = @__(@JsonCreator))
     final class UpdatePost implements BlogCommand, CompressedJsonable, PersistentEntity.ReplyType<Done> {
         @NonNull
-        private final PostContent content;
+        PostContent content;
     }
 }

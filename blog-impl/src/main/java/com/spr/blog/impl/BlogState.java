@@ -10,7 +10,7 @@ import java.util.Optional;
 import javax.annotation.concurrent.Immutable;
 
 import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.Value;
 
 /**
  * Holds the state of a blog post entity.
@@ -20,7 +20,7 @@ import lombok.Data;
  */
 @Immutable
 @JsonDeserialize
-@Data
+@Value
 @AllArgsConstructor(onConstructor = @__(@JsonCreator))
 public class BlogState implements CompressedJsonable {
 
@@ -29,5 +29,5 @@ public class BlogState implements CompressedJsonable {
      */
     public static final BlogState EMPTY = new BlogState(Optional.empty());
 
-    private final Optional<PostContent> content;
+    Optional<PostContent> content;
 }
