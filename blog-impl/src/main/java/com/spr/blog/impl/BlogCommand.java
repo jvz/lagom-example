@@ -38,7 +38,7 @@ public interface BlogCommand extends Jsonable {
     @Immutable
     @JsonDeserialize
     @Value
-    @AllArgsConstructor
+    @AllArgsConstructor(onConstructor = @__(@JsonCreator))
     final class AddPost implements BlogCommand, CompressedJsonable, PersistentEntity.ReplyType<String> {
         @NonNull
         PostContent content;
